@@ -1,4 +1,6 @@
 # nlp-02-text-preprocessing
+## Author: Lindsay Foster
+## Date: March 2026
 
 [![Python 3.14+](https://img.shields.io/badge/python-3.14%2B-blue?logo=python)](#)
 [![MIT](https://img.shields.io/badge/license-see%20LICENSE-yellow.svg)](./LICENSE)
@@ -109,6 +111,15 @@ uv sync --extra dev --extra docs --upgrade
 uvx pre-commit install
 git add -A
 uvx pre-commit run --all-files
+
+# to activate
+.\.venv\Scripts\Activate
+
+# Open the Command Palette (menu: View / Command Palette, or Ctrl+Shift+P)
+# Type and choose: Python: Select Interpreter
+# Choose the interpreter inside this project's .venv folder
+# Open the Command Palette (same as before).
+# Type or choose: Developer: Reload Window
 
 # Later, we install spacy data model and
 # en_core_web_sm = english, core, web, small
