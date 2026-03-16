@@ -96,7 +96,7 @@ open a machine terminal in your `Repos` folder:
 
 ```shell
 # Replace username with YOUR GitHub username.
-git clone https://github.com/username/nlp-02-text-preprocessing
+git clone https://github.com/LFoster03/nlp-02-text-preprocessing
 cd nlp-02-text-preprocessing
 code .
 ```
@@ -129,7 +129,7 @@ uvx pre-commit run --all-files
 
 # First, run the module
 # IMPORTANT: Close each figure after viewing so execution continues
-uv run python -m nlp.text_preprocessing_case
+uv run python -m nlp.text_preprocessing_foster
 
 # Then, open the notebook.
 # IMPORTANT: Select the kernel and Run All:
