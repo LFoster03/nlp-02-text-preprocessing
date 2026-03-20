@@ -144,6 +144,49 @@ git commit -m "update"
 git push -u origin main
 ```
 
+# Make a Modification
+
+### 1. Average Token Length (New Metric)
+
+- Added a new analytical metric to calculate the **average length of cleaned tokens** after preprocessing.
+- This is computed by averaging the number of characters across all tokens after stopword removal and filtering.
+
+**Why this matters:**
+- Provides insight into the **complexity of the text**.
+- Longer average token lengths may indicate more technical or specialized vocabulary.
+- Shorter averages may indicate simpler or more common language.
+
+---
+
+### 2. Token Reduction Tracking
+
+- Added a calculation to measure how many tokens are removed during preprocessing.
+
+**What was added:**
+- A comparison between the number of raw tokens and cleaned tokens.
+- A printed summary showing how many tokens were removed.
+
+**Why this matters:**
+- Helps quantify the **impact of preprocessing steps** like punctuation removal and stopword filtering.
+- Improves transparency by showing how much noise was removed from the data.
+
+---
+
+These modifications enhance the analysis by adding **quantitative insights** and improving understanding of how preprocessing affects the dataset.
+
+### 3. Token Length Distribution (New Visualization)
+
+- Added a histogram to visualize the **distribution of token lengths** after preprocessing.
+- Each bar represents how frequently tokens of a certain length (number of characters) appear in the cleaned dataset.
+
+**Why this matters:**
+- Complements the average token length metric by showing the full distribution of word lengths.
+- Helps identify whether the text is dominated by shorter, simpler words or longer, more complex vocabulary.
+- Provides a clearer, visual understanding of text structure that cannot be seen from a single average value alone.
+
+**Observation:**
+- The histogram shows that most tokens fall within a specific range of lengths, with fewer very short or very long words, helping characterize the overall language complexity of the text.
+
 </details>
 
 ## Notes

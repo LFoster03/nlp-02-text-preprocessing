@@ -1,5 +1,5 @@
 """
-text_preprocessing_case.py - Project script (example).
+text_preprocessing_foster.py - Project script (example).
 
 Purpose
 
@@ -21,7 +21,7 @@ Notes
 
 Run from root project folder with:
 
-  uv run python -m nlp.text_preprocessing_case
+  uv run python -m nlp.text_preprocessing_foster
 """
 
 # ============================================================
@@ -62,7 +62,9 @@ log_path(LOG, "SCRIPTS_PATH", SCRIPTS_PATH)
 
 # Choose a text file to analyze.
 # Each line is treated as one text record.
-input_path: Path = DATA_PATH / "text_data_case.txt"
+input_path: Path = (
+    DATA_PATH / "C:\\Repos\\nlp-02-text-preprocessing\\data copy\\text_data_foster.txt"
+)
 
 # Read all lines from the file.
 text_list: list[str] = input_path.read_text(encoding="utf-8").splitlines()
@@ -187,6 +189,21 @@ print(clean_tokens[:20])
 print(f"Total cleaned tokens: {count_of_clean_tokens:,}")
 
 # ============================================================
+# Section 7.5. Compute Average Token Length & Number of Removed Tokens
+# ============================================================
+
+avg_token_length: float = (
+    sum(len(token) for token in clean_tokens) / count_of_clean_tokens
+    if count_of_clean_tokens > 0
+    else 0
+)
+
+print(f"Average token length (after cleaning): {avg_token_length:.2f}")
+
+tokens_removed = count_of_raw_tokens - count_of_clean_tokens
+print(f"Tokens removed during preprocessing: {tokens_removed:,}")
+
+# ============================================================
 # Section 8. Build a Before/After Summary Table
 # ============================================================
 
@@ -207,6 +224,27 @@ summary_df: pl.DataFrame = pl.DataFrame(
 
 print("Preprocessing summary:")
 print(summary_df)
+
+summary_df: pl.DataFrame = pl.DataFrame(
+    {
+        "stage": [
+            "raw tokens",
+            "after punctuation removal",
+            "after stop word removal",
+        ],
+        "count": [
+            count_of_raw_tokens,
+            count_of_tokens_no_punct,
+            count_of_clean_tokens,
+        ],
+    }
+)
+
+print("Preprocessing summary:")
+print(summary_df)
+
+# Print additional metric
+print(f"\nAverage cleaned token length: {avg_token_length:.2f} characters")
 
 # ============================================================
 # Section 9. Build a Frequency Table with Polars
@@ -252,6 +290,22 @@ ax.tick_params(axis="x", labelrotation=20)
 plt.title("Token Counts Across Preprocessing Stages")
 plt.xlabel("Stage")
 plt.ylabel("Count")
+plt.tight_layout()
+plt.show()
+
+# ============================================================
+# Section 12. Token Length Distribution (NEW Visualization)
+# ============================================================
+
+# Compute token lengths
+token_lengths = [len(token) for token in clean_tokens]
+
+plt.figure(figsize=(8, 5))
+plt.hist(token_lengths, bins=10)
+
+plt.title("Distribution of Token Lengths")
+plt.xlabel("Token Length (characters)")
+plt.ylabel("Frequency")
 plt.tight_layout()
 plt.show()
 
