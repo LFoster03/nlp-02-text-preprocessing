@@ -185,7 +185,49 @@ These modifications enhance the analysis by adding **quantitative insights** and
 - Provides a clearer, visual understanding of text structure that cannot be seen from a single average value alone.
 
 **Observation:**
-- The histogram shows that most tokens fall within a specific range of lengths, with fewer very short or very long words, helping characterize the overall language complexity of the text.
+- The histogram shows that most tokens fall between 4 and 6 characters however, there are more tokens with between 8 and 12 than below 6. This means the language may be a little more complex or techinical.
+
+# Apply the Skills to a New Problem
+
+## Professional Practice
+
+For this phase, I applied the text preprocessing and analysis pipeline to a new dataset from a different domain.
+
+### New Data Source
+- Source: Wikipedia article on the British Library
+- URL: https://en.wikipedia.org/wiki/British_Library
+- The text describes the role, history, and scale of the British Library as a national research institution.
+
+---
+
+### Approach
+The same preprocessing steps were applied:
+- Tokenization
+- Lowercasing
+- Punctuation removal
+- Stopword filtering
+- Token length filtering
+
+Additional metrics and visualizations from earlier modifications were also used:
+- Average token length
+- Token reduction count
+- Token length distribution (histogram)
+- Frequency analysis and visualizations
+
+---
+
+### Observations
+
+- The most frequent words included terms such as *library*, *items*, *books*, *united* and *kingdom*, reflects the geographical and informational focus of the text.
+- Compared to the original dataset, this text contains more **domain-specific vocabulary** related to libraries, their materials and the location.
+- The average token length was between 5 and 8, suggesting the use of more **specialized language**.
+- The token length distribution shows that most words fall in the mid-length range.
+---
+
+### Conclusion
+
+This demonstrates that the preprocessing pipeline can be successfully applied to a different domain to extract meaningful insights.
+The results vary based on the subject matter, showing that text analysis techniques are flexible and useful across a wide range of real-world data sources.
 
 </details>
 
