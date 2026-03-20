@@ -248,12 +248,6 @@ Additional metrics and visualizations from earlier modifications were also used:
 | manuscr.| 2         |
 | dept.   | 1         |
 
-## Images
-
-![Most Frequent Cleaned Tokens](C:\Repos\nlp-02-text-preprocessing\docs\images\Figure_1.png)
-![Most Frequent Cleaned Tokens](C:/Repos/nlp-02-text-preprocessing/docs/images/Figure_1.png)
-
-
 
 ### Observations
 
