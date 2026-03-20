@@ -189,9 +189,26 @@ These modifications enhance the analysis by adding **quantitative insights** and
 
 # Apply the Skills to a New Problem
 
-## Professional Practice
+## Project Overview
 
-For this phase, I applied the text preprocessing and analysis pipeline to a new dataset from a different domain.
+This project demonstrates how to preprocess and analyze text data using Python.
+I applied the text preprocessing and analysis pipeline to a new dataset from a different domain.
+
+The pipeline includes:
+- Tokenization
+- Lowercasing
+- Punctuation removal
+- Stopword filtering
+- Frequency analysis
+- Additional metrics and visualizations
+
+---
+
+## Setup
+1. Clone the repository.
+2. Create and sync the project environment.
+3. Run the script from the root project folder using the new data source.
+
 
 ### New Data Source
 - Source: Wikipedia article on the British Library
@@ -215,6 +232,28 @@ Additional metrics and visualizations from earlier modifications were also used:
 - Frequency analysis and visualizations
 
 ---
+
+## Key Results
+
+| Word    | Frequency |
+| ------- | --------- |
+| library | 8         |
+| items   | 4         |
+| books   | 3         |
+| united  | 3         |
+| kingdom | 3         |
+| million | 3         |
+| many    | 2         |
+| british | 2         |
+| manuscr.| 2         |
+| dept.   | 1         |
+
+## Images
+
+![Most Frequent Cleaned Tokens](C:\Repos\nlp-02-text-preprocessing\docs\images\Figure_1.png)
+![Most Frequent Cleaned Tokens](C:/Repos/nlp-02-text-preprocessing/docs/images/Figure_1.png)
+
+
 
 ### Observations
 
